@@ -68,7 +68,7 @@ echo '::endgroup::'
 
 echo '::group::Publishing'
 git remote add aur "ssh://aur@aur.archlinux.org/${pkgname}.git"
-git add -fv PKGBUILD .SRCINFO $other_files
+git add -fv .
 case "$allow_empty_commits" in
 true)
   git commit --allow-empty -m "$commit_message"
