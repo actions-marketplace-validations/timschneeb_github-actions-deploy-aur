@@ -55,6 +55,7 @@ echo '::endgroup::'
 echo '::group::Generating PKGBUILD and .SRCINFO'
 
 echo 'Copying PKGBUILD...'
+cd /
 cp -v PKGBUILD $other_files /tmp/local-repo
 cd /tmp/local-repo
 
