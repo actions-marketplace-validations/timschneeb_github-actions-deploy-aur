@@ -3,7 +3,7 @@
 set -o errexit -o pipefail -o nounset
 
 pkgbuild=$INPUT_PKGBUILD
-pkgbuild=$INPUT_OTHER_FILES
+other_files=$INPUT_OTHER_FILES
 
 echo '::group::Creating builder user'
 useradd --create-home --shell /bin/bash builder
