@@ -36,6 +36,10 @@ inputs:
     description: 'Comma-separated list of types to use when adding aur.archlinux.org to known hosts'
     required: false
     default: 'rsa,dsa,ecdsa,ed25519'
+  other_files:
+    description: 'Additional files to be committed'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
