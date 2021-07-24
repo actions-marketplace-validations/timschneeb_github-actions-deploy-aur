@@ -11,6 +11,7 @@ commit_message=$INPUT_COMMIT_MESSAGE
 allow_empty_commits=$INPUT_ALLOW_EMPTY_COMMITS
 force_push=$INPUT_FORCE_PUSH
 ssh_keyscan_types=$INPUT_SSH_KEYSCAN_TYPES
+other_files=$INPUT_OTHER_FILES
 
 assert_non_empty() {
   name=$1
@@ -64,7 +65,7 @@ echo '::endgroup::'
 
 echo '::group::Publishing'
 git remote add aur "ssh://aur@aur.archlinux.org/${pkgname}.git"
-git add -fv PKGBUILD .SRCINFO
+git add -fv PKGBUILD .SRCINFO $other_files
 case "$allow_empty_commits" in
 true)
   git commit --allow-empty -m "$commit_message"
