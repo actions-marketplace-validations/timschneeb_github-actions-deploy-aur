@@ -19,7 +19,8 @@ chmod -vR 600 /home/builder/.ssh/*
 echo '::endgroup::'
 
 echo '::group::Copying PKGBUILD'
-cp -r "$pkgbuild" $other_files /PKGBUILD
+cp -r "$pkgbuild" /PKGBUILD
+cp -r $other_files / 
 echo '::endgroup::'
 
 exec runuser builder --command 'bash -l -c /build.sh'
