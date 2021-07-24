@@ -53,10 +53,10 @@ git clone -v "https://aur.archlinux.org/${pkgname}.git" /tmp/local-repo
 echo '::endgroup::'
 
 echo '::group::Generating PKGBUILD and .SRCINFO'
-cd /tmp/local-repo
 
 echo 'Copying PKGBUILD...'
-cp -v /PKGBUILD ./
+cp -v PKGBUILD $other_files /tmp/local-repo
+cd /tmp/local-repo
 
 echo "Updating .SRCINFO"
 makepkg --printsrcinfo >.SRCINFO
