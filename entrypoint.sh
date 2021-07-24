@@ -3,6 +3,7 @@
 set -o errexit -o pipefail -o nounset
 
 pkgbuild=$INPUT_PKGBUILD
+pkgbuild=$INPUT_OTHER_FILES
 
 echo '::group::Creating builder user'
 useradd --create-home --shell /bin/bash builder
@@ -18,7 +19,7 @@ chmod -vR 600 /home/builder/.ssh/*
 echo '::endgroup::'
 
 echo '::group::Copying PKGBUILD'
-cp -r "$pkgbuild" /PKGBUILD
+cp -r "$pkgbuild" $other_files /PKGBUILD
 echo '::endgroup::'
 
 exec runuser builder --command 'bash -l -c /build.sh'
