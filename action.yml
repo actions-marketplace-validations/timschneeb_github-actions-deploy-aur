@@ -1,6 +1,6 @@
-name: 'Publish AUR package'
+name: 'Publish AUR package 2' # changed due to github restrictions
 description: 'Publish an AUR package'
-author: KSXGitHub
+author: thepbone # changed due to github restrictions
 branding:
   color: blue
   icon: package
